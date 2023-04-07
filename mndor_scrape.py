@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import requests
 from datetime import date, timedelta
+import os
 
 excel = False
 
@@ -10,7 +11,7 @@ def make_hyperlink(ecrvId, countyFinal='false'):
     url = 'https://www.mndor.state.mn.us/ecrv_search/app/openPublicEcrvView?ecrvId=' + ecrvId + '&countyFinal=' + countyFinal + '&title=View+Summary+for+Preliminary+eCRV+ID'
     return '=HYPERLINK("%s", "%s")' % (url, 'eCRV')
 
-def extract(counties='Dakota, Hennepin, Carver, Ramsey, Anoka', search_type='Preliminary', property_use_group='RESID', begin_date=date.today()-timedelta(days=7), end_date=date.today()):
+def extract(counties='Dakota, Hennepin, Ramsey', search_type='Preliminary', property_use_group='RESID', begin_date=date.today()-timedelta(days=7), end_date=date.today()):
     county_ids = {
         'Aitkin': '01',
         'Anoka': '02',
