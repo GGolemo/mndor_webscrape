@@ -1,8 +1,2 @@
 # python-webscrape
-# Run python3 webscrape.py from command line
-
-#dependencies
-#bs4
-#lxml
-#pandas
-#requests
+# Run python3 mndor_webscrape.py from command line
